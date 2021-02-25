@@ -13,7 +13,9 @@ def addMovie():
 
 def listMovies():
     for movie in movie_list:
-        print(movie)
+        print(f"Name: {movie['Name']}")
+        print(f"Director: {movie['Director']}")
+        print(f"Year: {movie['Year']}")
 
 def findMovie():
     search_title = input("Enter the movie title you want to find: ")
