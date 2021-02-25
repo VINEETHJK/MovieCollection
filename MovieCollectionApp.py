@@ -13,16 +13,19 @@ def addMovie():
 
 def listMovies():
     for movie in movie_list:
-        print(f"Name: {movie['Name']}")
-        print(f"Director: {movie['Director']}")
-        print(f"Year: {movie['Year']}")
+        print_movie_details(movie)
 
 def findMovie():
     search_title = input("Enter the movie title you want to find: ")
     for movie in movie_list:
         if movie['Name'] == search_title:
-            print(movie)
+            print_movie_details(movie)
 
+def print_movie_details(movie):
+        print(f"Name: {movie['Name']}")
+        print(f"Director: {movie['Director']}")
+        print(f"Year: {movie['Year']}\n")
+        
 
 def menu():
     user_input = input(MENU_PROMPT).lower()
