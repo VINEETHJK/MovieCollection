@@ -8,7 +8,7 @@ def addMovie():
     name = input("Enter the movie name you want to add: ").lower()
     director = input("Enter the movie director name: ").lower()
     year = input("Enter the year when the movie was released: ").lower()
-    movie_dict = {'Name': name, 'Director': director, 'Year': year}
+    movie_dict = {'Title': name, 'Director': director, 'Year': year}
     movie_list.append(movie_dict)
 
 def listMovies():
@@ -16,13 +16,17 @@ def listMovies():
         print_movie_details(movie)
 
 def findMovie():
-    search_title = input("Enter the movie title you want to find: ")
-    for movie in movie_list:
-        if movie['Name'] == search_title:
-            print_movie_details(movie)
+    search_parameter = input("What do you want to search for? Title, Director or Year: ")
+    if search_parameter in ['Title', 'Director', 'Year']:
+        search_item = input(f"\nEnter the {search_parameter} you want to search: ")
+        for movie in movie_list:
+            if movie[search_parameter] == search_item:
+                print_movie_details(movie)
+
+
 
 def print_movie_details(movie):
-        print(f"Name: {movie['Name']}")
+        print(f"Name: {movie['Title']}")
         print(f"Director: {movie['Director']}")
         print(f"Year: {movie['Year']}\n")
         
